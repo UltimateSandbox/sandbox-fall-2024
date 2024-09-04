@@ -5,10 +5,11 @@ public class Driver {
     public static void main(String[] args) {
 
         // Aggregation example
-        AggregationExample example = new AggregationExample();
+        WidgetProcessor example = new WidgetProcessor();
         for(int x = 0; x < 10; x++) {
-            example.getWidgets().add(new Widget());
+            example.addWidget(new Widget());
         }
+        example.processWidgets();
     }
 
 }
