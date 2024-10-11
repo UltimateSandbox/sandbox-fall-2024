@@ -49,9 +49,9 @@ public class ArrayListStackTest {
         stack.push(1);
         stack.push(2);
         stack.push(3);
-        assertEquals(2, stack.search(1));
+        assertEquals(0, stack.search(1));
         assertEquals(1, stack.search(2));
-        assertEquals(0, stack.search(3));
+        assertEquals(2, stack.search(3));
         assertEquals(-1, stack.search(4));
     }
 
