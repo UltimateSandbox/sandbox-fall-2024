@@ -29,6 +29,16 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
     @Override
     public void addLast(E element) {
 
+        Node newNode = new Node(element, null); // 1
+
+        if (tail == null) {
+            tail = newNode; // 2
+            head = newNode;
+        } else {
+            tail.next = newNode; // 3
+            tail = newNode; // 4
+        }
+
     }
 
     @Override
@@ -55,32 +65,96 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
 
     @Override
     public E pollLast() {
-        return null;
+
+        E element;
+
+        if (tail == null) {
+            element = null;
+        } else {
+            element = tail.element; // 1
+
+            if (head == tail) { // one element in the list
+                head = null;
+                tail = null;
+            } else { // more than one element in the list
+                Node current = head;
+                while (current.next != tail) { // 2
+                    current = current.next;
+                }
+                current.next = null; // 3
+                tail = current; // 4
+            }
+        }
+
+        return element;
     }
 
     @Override
     public E peekFirst() {
-        return head.element;
+
+        E returnValue = null;
+        if(head != null) {
+            returnValue = head.element;
+        }
+        return returnValue;
     }
 
     @Override
     public E peekLast() {
-        return tail.element;
+
+        E returnValue = null;
+        if(tail != null) {
+            returnValue = tail.element;
+        }
+        return returnValue;
     }
 
     @Override
     public void clear() {
 
+        Node current = head;
+        while (current != null) {
+            Node next = current.next;
+            current.next = null;
+            current = next;
+        }
+        head = null;
+        tail = null;
+
     }
 
     @Override
     public boolean contains(E element) {
-        return false;
+
+        boolean found = false;
+        Node current = head;
+        while (current != null) {
+            if (current.element.equals(element)) {
+                found = true;
+                break;
+            }
+            current = current.next;
+        }
+
+        return found;
     }
 
     @Override
     public int size() {
-        return 0;
+
+        int counter = 0;
+        if (head != null) { // list is not empty
+
+            // more than one element in the list
+            Node current = head;
+            while (current != null) {
+                counter++;
+                current = current.next;
+
+            }
+        }
+
+        return counter;
     }
 
     @Override

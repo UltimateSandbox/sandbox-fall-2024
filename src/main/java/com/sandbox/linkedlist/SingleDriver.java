@@ -11,8 +11,12 @@ public class SingleDriver {
         linkedList.addFirst("third");
         linkedList.addFirst("fourth");
         linkedList.addFirst("fifth");
+        linkedList.addLast("seventh");
+        linkedList.addLast("eighth");
+        linkedList.addLast("ninth");
 
         System.out.println(linkedList);
+        System.out.println(linkedList.size());
 
         linkedList.pollFirst();
 
@@ -26,5 +30,20 @@ public class SingleDriver {
         linkedList.pollFirst();
 
         System.out.println(linkedList);
+
+        linkedList.pollLast();
+        linkedList.pollLast();
+
+        System.out.println(linkedList);
+
+        System.out.println(linkedList.peekLast());
+        System.out.println(linkedList.peekFirst());
+
+        System.out.println(linkedList.contains("third"));
+        System.out.println(linkedList.contains("42"));
+        System.out.println(linkedList.size());
+
+        linkedList.clear();
+        System.out.println(linkedList.size());
     }
 }
