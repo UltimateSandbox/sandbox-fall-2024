@@ -16,6 +16,7 @@ public class FibonacciNumbers {
             }
     }
 
+    // O(2^n) amortized to O(1) using memoization
     public long fib(int x) {
 
         // f0 = 0

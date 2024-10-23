@@ -12,6 +12,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         tail = null;
     }
 
+    // O(1)
     @Override
     public void addFirst(E element) {
 
@@ -26,6 +27,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
 
     }
 
+    // O(1)
     @Override
     public void addLast(E element) {
 
@@ -41,6 +43,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
 
     }
 
+    // O(1)
     @Override
     public E pollFirst() {
 
@@ -63,6 +66,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         return element;
     }
 
+    // O(n)
     @Override
     public E pollLast() {
 
@@ -89,6 +93,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         return element;
     }
 
+    // O(1)
     @Override
     public E peekFirst() {
 
@@ -99,6 +104,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         return returnValue;
     }
 
+    // O(1)
     @Override
     public E peekLast() {
 
@@ -109,6 +115,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         return returnValue;
     }
 
+    // O(n)
     @Override
     public void clear() {
 
@@ -123,6 +130,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
 
     }
 
+    // O(n)
     @Override
     public boolean contains(E element) {
 
@@ -139,6 +147,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         return found;
     }
 
+    // O(n)
     @Override
     public int size() {
 
@@ -157,6 +166,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         return counter;
     }
 
+    // O(mn)
     @Override
     public String toString() {
 
@@ -180,6 +190,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         E element;
         Node next;
 
+        // O(1)
         public Node(E element, Node next) {
             this.element = element;
             this.next = next;
